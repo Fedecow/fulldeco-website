@@ -1,0 +1,237 @@
+
+html, body {
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+}
+
+body{
+    
+    font-family:serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+/* Estilo de la barra de navegación */
+.navbar {
+    background: transparent; /* Fondo completamente transparente */
+    transition: background-color 0.3s;
+    max-height: 90px;
+    position: relative;
+}
+.superpuesto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    z-index: 1000; /* Asegura que el navbar esté por encima del contenido */
+}
+
+/* Estilo para el contenedor del logo y los ítems de navegación */
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between; /* Coloca el logo a la izquierda y el botón a la derecha */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+/* Estilo para el logo */
+.navbar-brand {
+    color: #fff; /* Cambia el color del texto a blanco */
+    margin-right: 15px;
+    margin-left: 0; /* Ajusta el margen izquierdo del logo a "0" para separarlo del menú */
+}
+/* Estilo para los ítems de la barra de navegación */
+.navbar-nav {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos de navegación */
+    flex-grow: 1; /* Hace que los elementos ocupen todo el espacio disponible */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+ 
+
+.nav-item {
+    margin: 0 15px; /* Espacio entre los elementos de navegación */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff; /* Cambia el color del texto a blanco */
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 18px; /* Tamaño del texto */
+}
+
+.navbar-brand-img {
+    max-width: 100px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Agrega estos estilos al final de tu archivo CSS */
+#navbarOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none; /* Evita que se hagan clics en el fondo */
+    transition: opacity 0.3s;
+}
+
+#navbarNav.show {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70%; /* Ancho de la barra de navegación */
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+}
+
+#navbarNav.show.show-overlay + #navbarOverlay {
+    display: block;
+    opacity: 1;
+    pointer-events: auto; /* Habilita clics en el fondo */
+}
+/* Estilo para el contenedor principal (hero) */
+.hero {
+    background-image: url(img/casa-elegante-estilo-clasico-frances-lujo-dormitorio-cortinas-chaise-longue-1666077305.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centro el contenido horizontalmente */
+    align-items: center;
+    text-align: left; /* Alinea el texto a la izquierda */
+    color: white;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* Color de texto */
+}
+/* Estilo para el contenido dentro del contenedor */
+.content {
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo semi-transparente para mejorar la legibilidad del texto */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el contenido hacia el lado izquierdo */
+    justify-content: center;
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding-left: 20px; /* Agrega un espacio a la izquierda para mover el contenido hacia el lado izquierdo */
+   
+    
+}
+
+
+/* Estilo para las imágenes de fondo (se superpondrán en el carrusel) */
+.background-image {
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    z-index: -1;
+    max-width: 100%;
+    
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilo para el título H1 */
+.content h1 {
+    color: #FFFFFF; /* Color del texto */
+    font-family: "Renogare", Sans-serif; /* Fuente */
+    font-size: 78px; /* Tamaño del texto */
+    font-weight: 300; /* Peso de la fuente */
+    text-transform: uppercase; /* Transformación de texto a mayúsculas */
+    line-height: 1;
+    letter-spacing: -10px; /* Ajusta el valor según tu preferencia */
+}
+
+/* Estilo para el párrafo */
+.content p {
+    font-size: 22px; /* Tamaño de fuente del párrafo */
+    line-height: 0;
+    margin-bottom: 5px;
+}
+
+
+/* Estilo para el botón de acción ovalado */
+.btn-accion {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: transparent; /* Fondo transparente */
+    color: #ffffff; /* Color del texto del botón (azul oscuro) */
+    text-decoration: none;
+    border-radius: 50px; /* Hace que el botón sea ovalado */
+    font-size: 20px;
+    border: 2px solid #ffffff; /* Borde de 2px sólido en azul oscuro */
+    transition: transform 0.3s ease, font-size 0.3s ease; /* Transición suave para transformación y tamaño de fuente */
+    transform: scale(1); /* Tamaño inicial del botón (100%) */
+}
+/* Estilo para el botón al hacer hover */
+.btn-accion:hover {
+    background-color: transparent; /* Cambia el color de fondo al hacer hover a azul oscuro */
+    color: white; /* Cambia el color del texto a blanco */
+    transform: scale(1.1); /* Aumenta el tamaño del botón al hacer hover al 110% del tamaño original */
+    font-size: 20px; /* Tamaño de fuente del botón al hacer hover (mismo tamaño inicial) */
+    text-decoration: none;
+
+}
+/*Estilo para las secciones*/
+
+.product-section {
+    display: flex;
+    flex-direction: row; /* Cambiar a "column" para texto debajo de la imagen */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin: 0; /* Espacio entre secciones */
+    padding: 20px; /* Espacio interno de la sección */
+}
+
+.product-text {
+    flex: 1; /* Permite que el texto ocupe el espacio restante */
+    padding: 20px; /* Espacio interno del texto */
+    text-align: left; /* Alinea el texto a la izquierda o según lo desees */
+}
+
+.product-image img {
+    max-width: 80%; /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+}
+
+.content-main {
+    background:#000000;
+color: #ffffff;}
+
+
+
+/* Estilo para el título H1 en pantallas grandes */
+.content h1 {
+    font-size: 78px; /* Tamaño del texto en pantallas grandes */
+    /* ...otros estilos... */
+}
+
+/* Estilo para el título H1 en pantallas pequeñas (menos de 560px de ancho) */
+@media (max-width: 560px) {
+    .content h1 {
+        font-size: 60px; /* Tamaño del texto en pantallas pequeñas */
+    }
+}
