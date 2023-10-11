@@ -1,6 +1,7 @@
 
 html, body {
     overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+   
 }
 
 body{
@@ -161,15 +162,16 @@ img {
     font-size: 78px; /* Tamaño del texto */
     font-weight: 300; /* Peso de la fuente */
     text-transform: uppercase; /* Transformación de texto a mayúsculas */
-    line-height: 1;
+    line-height: 0.8;
     letter-spacing: -10px; /* Ajusta el valor según tu preferencia */
 }
 
 /* Estilo para el párrafo */
 .content p {
     font-size: 22px; /* Tamaño de fuente del párrafo */
-    line-height: 0;
+    line-height: 1;
     margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -203,25 +205,47 @@ img {
     flex-direction: row; /* Cambiar a "column" para texto debajo de la imagen */
     align-items: center; /* Alinea verticalmente los elementos */
     margin: 0; /* Espacio entre secciones */
-    padding: 20px; /* Espacio interno de la sección */
+    padding: 50px; /* Espacio interno de la sección */
 }
 
 .product-text {
     flex: 1; /* Permite que el texto ocupe el espacio restante */
-    padding: 20px; /* Espacio interno del texto */
+    padding: 10px; /* Espacio interno del texto */
     text-align: left; /* Alinea el texto a la izquierda o según lo desees */
 }
 
 .product-image img {
-    max-width: 80%; /* Ajusta el tamaño máximo de la imagen */
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
     height: auto;
+    
 }
 
 .content-main {
-    background:#000000;
-color: #ffffff;}
+    background:#ffffff;
+color: #000000;}
 
 
+.styleH2 {
+    color: #000000;
+  font-family: "Renogare", Sans-serif;
+    font-size: 51px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 50px;
+    margin-bottom: 8px;
+}
+
+.styleP {
+    color: #717171;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+    
+}
+ .primerP {
+    margin-bottom: 10px;
+ }
 
 /* Estilo para el título H1 en pantallas grandes */
 .content h1 {
@@ -235,3 +259,31 @@ color: #ffffff;}
         font-size: 60px; /* Tamaño del texto en pantallas pequeñas */
     }
 }
+
+/* Estilos para la versión móvil (ancho de página menor o igual a 1006px) */
+@media (max-width: 1006px) {
+    .product-section {
+        flex-direction: column; /* Cambia la dirección a "column" en pantallas más pequeñas */
+    }
+
+    .product-text {
+        text-align: center; /* Centra el texto en pantallas más pequeñas */
+    }
+
+    .product-image {
+        order: -1; /* Cambia el orden para que la imagen aparezca antes del texto en pantallas más pequeñas */
+    }
+    .product-image img {
+        max-width: 80%; /* Reduce el tamaño de la imagen en pantallas más pequeñas */
+        display: block; /* Evita que el espacio adicional aparezca debajo de la imagen en móvil */
+        margin: 0 auto; /* Centra horizontalmente la imagen en móvil */
+    }
+
+}
+
+@media (max-width: 330px) {
+    .content {
+        padding-top: 50px;
+    }
+}
+

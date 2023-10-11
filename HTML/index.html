@@ -12,8 +12,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
         <!-- Enlace a animate.css desde un CDN -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
         <!-- Scripts JavaScript externos -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -25,8 +30,7 @@
 <!---------------Navbar-------------->
 
      <!-- Barra de navegación con el menú de hamburguesa -->
-     <nav class="navbar navbar-expand-lg navbar-dark  superpuesto">
-       
+     <nav class="navbar navbar-expand-lg navbar-dark superpuesto">
         <a class="navbar-brand animate__animated animate__fadeInDown" href="#">
             <img class="navbar-brand-img" src="img/84ec3138-1932-4d14-82e6-92b5ff9ebe81.webp" alt="logo">
         </a>
@@ -34,7 +38,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto animate__animated animate__fadeInDown"> <!-- Agregamos las clases de animación aquí -->
+            <ul class="navbar-nav ml-auto animate__animated animate__fadeInDown">
                 <li class="nav-item">
                     <a class="nav-link inicio-personalizado" href="#">Inicio</a>
                 </li>
@@ -74,33 +78,48 @@
 </div>
   <!----------------Main---------------->
   <main class="content-main">
-  <section class="product-section">
-    <div class="product-text">
-        <h2>Producto 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget libero vel arcu fringilla hendrerit eu non velit.</p>
-    </div>
-    <div class="product-image">
-        <img data-aos="fade-left" data-aos-duration="2000" src="img/WhatsApp Image 2023-09-04 at 11.59.21 (1).jpeg" alt="Producto 1">
-    </div>
-</section>
-
-<!-- Sección 2 -->
-<section class="product-section">
-    <div class="product-image">
-        <img data-aos="fade-right" data-aos-duration="2000" src="img/WhatsApp Image 2023-09-04 at 11.54.34 (1).jpeg" alt="Producto 2">
-    </div>
-    <div class="product-text">
-        <h2>Producto 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget libero vel arcu fringilla hendrerit eu non velit.</p>
-    </div>
-</section>
+    <!----------------section 1-------------------->
+    <section class="product-section">
+        <div class="product-text">
+            <p class="styleP primerP" data-aos="fade-right" data-aos-delay="100" data-aos-duration="400">Encontrarás la mejor opción</p>
+            <h2 class="styleH2" data-aos="fade-right" data-aos-delay="300" data-aos-duration="500">full deco</h2>
+            <p class="styleP segundoP" data-aos="fade-right" data-aos-delay="600" data-aos-duration="800">Full Deco es tu destino para transformar tu hogar en un espacio verdaderamente acogedor y estilizado. Nos especializamos en la venta de cortinas de alta calidad, incluyendo opciones cromáticas de aluminio que ofrecen un toque de elegancia y funcionalidad, rollers blackout que te brindan la privacidad y oscuridad que necesitas, y bandas verticales para una solución de ventana versátil.
+                <br><br>
+                <span >Nuestro compromiso es ayudarte a crear un ambiente interior único y personalizado que refleje tu estilo y necesidades. Ya sea que estés buscando mejorar la decoración de tu sala de estar, dormitorio o cualquier otro espacio, en Full Deco encontrarás la solución perfecta.</span>
+            </p>
+        </div>
+        <div class="product-image" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+            <img src="img/roller-blackout/D_NQ_NP_729384-MLA46905399140_072021-O.webp" alt="Producto 1">
+        </div>
+    </section>
     
+    
+    
+    
+    
+
+
+
  </main> 
+
   <script>
     AOS.init();
   </script>
 
-
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.getElementById("navbar-toggler");
+        const navbarNav = document.getElementById("navbarNav");
+    
+        navbarToggler.addEventListener("click", function () {
+            if (navbarNav.classList.contains("show")) {
+                navbarNav.classList.remove("show");
+            } else {
+                navbarNav.classList.add("show");
+            }
+        });
+    });
+    </script>
 
 
 </body>
