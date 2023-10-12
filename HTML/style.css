@@ -206,6 +206,7 @@ img {
     align-items: center; /* Alinea verticalmente los elementos */
     margin: 0; /* Espacio entre secciones */
     padding: 50px; /* Espacio interno de la sección */
+    
 }
 
 .product-text {
@@ -251,6 +252,82 @@ color: #000000;}
 .content h1 {
     font-size: 78px; /* Tamaño del texto en pantallas grandes */
     /* ...otros estilos... */
+}
+
+
+ /*Estilo para la seccion 2*/
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 productos por fila en la vista de escritorio */
+    gap: 20px; /* Espacio entre los productos */
+    background-color: #000000;
+     justify-items: center; /* Centra las tarjetas en el contenedor */
+    padding: 50px;
+}
+
+
+
+/* Estilos para las tarjetas de producto */
+.product-card {
+    text-align: center;
+    width: 90%; /* Reducir el ancho de las tarjetas al 90% del ancho original */
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* Espacio adicional entre las tarjetas de productos */
+    max-height: 100%; /* Establece una altura máxima igual a la del contenedor */
+    color: #fff;
+}
+
+
+.product-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.product-card p {
+    font-size: 14px;
+}
+.product-card .image-container {
+    flex: 1; /* Ocupa el espacio restante en la tarjeta */
+    width: 100%;
+    height: 0;
+    padding-bottom: 66.67%; /* Esto es una relación de aspecto 3:2 (600x400) */
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 0px; /* Cambia el valor según lo desees */
+    margin-bottom: 5px;
+}
+
+.product-card .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s; /* Agrega una transición para una animación suave */
+    transform-origin: center center; /* Establece el punto de origen en el centro de la imagen */
+    transform: translate(0, 0) scale(1.1); /* Aplica un zoom inicial (puedes ajustar el valor) */
+}
+
+.product-card .image-container img:hover {
+    transform: translate(0, 0) scale(1); /* Al pasar el mouse por encima, la imagen se muestra completa sin cambio de tamaño */
+}
+
+
+
+
+/* Media Query para tablet */
+@media (max-width: 1024px) {
+    .product-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 productos por fila en la vista de tablet */
+    }
+}
+
+/* Media Query para móvil */
+@media (max-width: 600px) {
+    .product-gallery {
+        grid-template-columns: repeat(1, 1fr); /* 1 producto por fila en la vista móvil */
+    }
 }
 
 /* Estilo para el título H1 en pantallas pequeñas (menos de 560px de ancho) */
