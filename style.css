@@ -1,6 +1,8 @@
 
 html, body {
     overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+    
+   
    
 }
 
@@ -49,17 +51,19 @@ body{
     justify-content: center; /* Centra horizontalmente los elementos de navegación */
     flex-grow: 1; /* Hace que los elementos ocupen todo el espacio disponible */
     align-items: center; /* Centra verticalmente los elementos */
+   
 }
  
 
 .nav-item {
     margin: 0 15px; /* Espacio entre los elementos de navegación */
+    
 }
 
 .navbar-dark .navbar-nav .nav-link {
     color: #ffffff; /* Cambia el color del texto a blanco */
     text-align: center; /* Centra el texto horizontalmente */
-    font-size: 18px; /* Tamaño del texto */
+    font-size: 25px; /* Tamaño del texto */
 }
 
 .navbar-brand-img {
@@ -68,40 +72,9 @@ body{
     margin-right: 0px;
 }
 
-/* Agrega estos estilos al final de tu archivo CSS */
-#navbarOverlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-    z-index: 9999;
-    opacity: 0;
-    pointer-events: none; /* Evita que se hagan clics en el fondo */
-    transition: opacity 0.3s;
-}
 
-#navbarNav.show {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 70%; /* Ancho de la barra de navegación */
-    z-index: 10000;
-    transform: translateX(100%);
-    transition: transform 0.3s;
-}
 
-#navbarNav.show.show-overlay + #navbarOverlay {
-    display: block;
-    opacity: 1;
-    pointer-events: auto; /* Habilita clics en el fondo */
-}
+
 /* Estilo para el contenedor principal (hero) */
 .hero {
     background-image: url(img/casa-elegante-estilo-clasico-frances-lujo-dormitorio-cortinas-chaise-longue-1666077305.jpg);
@@ -206,13 +179,14 @@ img {
     align-items: center; /* Alinea verticalmente los elementos */
     margin: 0; /* Espacio entre secciones */
     padding: 50px; /* Espacio interno de la sección */
-    
+    background: #ffffff;
 }
 
 .product-text {
     flex: 1; /* Permite que el texto ocupe el espacio restante */
     padding: 10px; /* Espacio interno del texto */
     text-align: left; /* Alinea el texto a la izquierda o según lo desees */
+    line-height: 1.5;
 }
 
 .product-image img {
@@ -228,7 +202,7 @@ color: #000000;}
 
 .styleH2 {
     color: #000000;
-  font-family: "Renogare", Sans-serif;
+    font-family: "Montserrat", Sans-serif;
     font-size: 51px;
     font-weight: 700;
     text-transform: uppercase;
@@ -237,16 +211,15 @@ color: #000000;}
 }
 
 .styleP {
-    color: #717171;
+    color: #88898C;
     font-family: "Montserrat", Sans-serif;
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 0;
+    padding-top: 15px;
     
 }
- .primerP {
-    margin-bottom: 10px;
- }
+ 
 
 /* Estilo para el título H1 en pantallas grandes */
 .content h1 {
@@ -261,7 +234,7 @@ color: #000000;}
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 productos por fila en la vista de escritorio */
     gap: 20px; /* Espacio entre los productos */
-    background-color: #000000;
+    background-color: #102601;
     justify-items: center; /* Centra las tarjetas en el contenedor */
     padding: 50px;
     
@@ -279,6 +252,7 @@ color: #000000;}
     margin-bottom: 20px; /* Espacio adicional entre las tarjetas de productos */
     max-height: 40rem; /* Establece una altura máxima igual a la del contenedor */
     color: #fff;
+    
 }
 
 
@@ -290,6 +264,8 @@ color: #000000;}
 }
 
 .product-card p {
+    color: #88898C;
+    font-family: "Montserrat", Sans-serif;
     font-size: 14px;
     
    
@@ -297,7 +273,7 @@ color: #000000;}
 .product-card .image-container {
     flex: 1; /* Ocupa el espacio restante en la tarjeta */
     width: 100%;
-    height: 0;
+    height: 100vh;
     position: relative;
     overflow: hidden;
     padding-bottom: 0px; /* Cambia el valor según lo desees */
@@ -325,6 +301,31 @@ color: #000000;}
 .product-card .image-container img:hover {
     transform: translate(0, 0) scale(1); /* Al pasar el mouse por encima, la imagen se muestra completa sin cambio de tamaño */
 }
+
+/* Icono de WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 30px; /* Ajusta la distancia desde la parte inferior según tus preferencias */
+    right: 30px; /* Ajusta la distancia desde la derecha según tus preferencias */
+    z-index: 999; /* Asegura que esté en la parte superior de otros elementos */
+}
+
+.whatsapp-icon img {
+    width: 50px; /* Ajusta el tamaño del ícono según tus preferencias */
+    transition: width 0.4s ease; /* Agrega una transición suave */
+}
+
+.whatsapp-icon img:hover {
+    width: 70px;
+}
+
+.whatsapp-icon img:not(:hover) {
+    width: 50px;
+    transition: width 0.4s ease; /* Agrega una transición suave para el regreso al estado original */
+}
+
+
+
 
 
 
@@ -375,5 +376,55 @@ color: #000000;}
     .content {
         padding-top: 50px;
     }
+}
+
+
+/* Agrega estos estilos al final de tu archivo CSS */
+#navbarOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none; /* Evita que se hagan clics en el fondo */
+    transition: opacity 0.3s;
+}
+
+
+
+#navbarNav.show {
+    width: 0; /* Ancho inicial cero para ocultarlo */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    width: 100%; /* Ancho del menú desplegable al 100% de la ventana del navegador */
+    transform: translateX(0); /* Lo desplaza desde la derecha */
+    overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
+}
+
+.navbar-brand, .navbar-toggler {
+    z-index: 10001; /* Asegura que el logo y el botón estén en la parte superior */
+}
+
+.navbar-toggler {
+    position: relative; /* Ajusta la posición del botón */
+}
+#navbarNav.show + #navbarOverlay.show-overlay {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+#navbarNav.show .navbar-nav .nav-link {
+    color: #ffffff; /* Cambia el color del texto a rojo cuando se despliega el menú */
+    font-size: 40px; /* Cambia el tamaño del texto a 20px cuando se despliega el menú */
+    font-family: 'Tu-Fuente-Preferida', sans-serif; /* Cambia la fuente del texto */
+    
 }
 

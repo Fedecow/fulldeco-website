@@ -40,19 +40,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto animate__animated animate__fadeInDown">
                 <li class="nav-item">
-                    <a class="nav-link inicio-personalizado" href="#">Inicio</a>
+                    <a class="nav-link inicio-personalizado" href="#hero">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Acerca de</a>
+                    <a class="nav-link" href="#nosotros">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" href="#products">Productos</a>
                 </li>
             </ul>
         </div>
     </nav>
     
-
+<div id="navbarOverlay"></div>
 
    <!---------------Hero-------------->
    <div class="hero" id="hero">
@@ -79,7 +79,7 @@
   <!----------------Main---------------->
   <main class="content-main">
     <!----------------section 1-------------------->
-    <section class="product-section">
+    <section class="product-section" id="nosotros">
         <div class="product-text">
             <p class="styleP primerP" data-aos="fade-right" data-aos-delay="100" data-aos-duration="600">Encontrarás la mejor opción</p>
             <h2 class="styleH2" data-aos="fade-right" data-aos-delay="500" data-aos-duration="600">full deco</h2>
@@ -88,7 +88,7 @@
             </p>
         </div>
         <div class="product-image" >
-            <img src="img/roller-blackout/D_NQ_NP_729384-MLA46905399140_072021-O.webp" alt="Producto 1">
+            <img  src="img/roller-blackout/D_NQ_NP_729384-MLA46905399140_072021-O.webp" alt="Producto 1">
         </div>
     </section>
     
@@ -98,7 +98,7 @@
     
 <!----------------Sección 2---------------->
 
-<section class="product-gallery">
+<section class="product-gallery" id="products">
     <div class="product-card">
         <div class="image-container">
             <img src="img/bandas-verticales/bandasverticaes_outllet1.jpg" alt="bandas-verticales">
@@ -114,30 +114,30 @@
             <img src="img/cortinas-cromaticas-aluminio/df8a440a542bde9a4ba24fdf480f567c.jpg" alt="cortinas-aluminio">
             
         </div>
-        <div class="overlay">
+        
             <h3>Cortinas Cromaticas de Aluminio</h3>
         <p>Estas cortinas son ideales para ambientes contemporáneos, ofrecen durabilidad y fácil mantenimiento. Además, están disponibles en una amplia gama de colores para adaptarse a tu estilo de decoración.</p>
-    </div>
+    
 </div>
 
     <div class="product-card">
         <div class="image-container">
             <img src="img/cortinas-wood-blind/924bb4555fffb5656f59b38a388ae4ec.jpg" alt="wood-blind">
         </div>
-        <div class="overlay">
+        
         <h3>Cortinas Wood Blind</h3>
         <p>Estas cortinas aportan elegancia con lamas de madera que realzan la belleza natural y sofisticada de tu hogar. Ideales para combinar la durabilidad y fácil mantenimiento, además de una amplia gama de colores.</p>
-    </div>
+    
 </div>
 
     <div class="product-card">
         <div class="image-container">
             <img src="img/roller-eclipse/cd25cceb0d2a430ab3bcaea9e15cb023.jpg" alt="roller-eclipse">
         </div>
-        <div class="overlay">
+        
         <h3>Cortinas Eclipse</h3>
-        <p>Son una opción de ventana versátil y elegante que combina cortinas y persianas en una sola solución. Ofrecen un control eficaz de la luz, con una variedad de diseños y telas disponibles.</p>
-   </div>
+        <p>Es una opción de ventana versátil y elegante que combina cortinas y persianas en una sola solución. Ofrecen un control eficaz de la luz, con una variedad de diseños y telas disponibles.</p>
+   
  </div>
 
 
@@ -145,10 +145,10 @@
         <div class="image-container">
             <img src="img/screen/d4b909a143475798f90fe33f7f1bec60.jpg" alt="screen">
         </div>
-        <div class="overlay">
+        
         <h3>Cortinas Screen</h3>
-        <p> Son Elegantes y funcionales. Filtran la luz, protegen de los rayos UV y realzan cualquier espacio. La elección perfecta para comodidad y estilo.</p>
-    </div>
+        <p> Estas cortinas son elegantes y funcionales. Filtran la luz, protegen de los rayos UV y realzan cualquier espacio. La elección perfecta para comodidad y estilo.</p>
+    
 </div>
 
 
@@ -156,10 +156,10 @@
         <div class="image-container">
             <img src="img/roller-blackout/cortinas-roller-blackout-marca-coulisse-cortinashd-001.webp" alt="blackout">
         </div>
-        <div class="overlay">
+        
         <h3>Cortinas Blackout</h3>
         <p>Estas cortinas bloquean la luz y oscurecen tu espacio, brindando total privacidad y tranquilidad. Perfectas para dormitorios y ambientes relajantes. Modernas y funcionales.</p>
-    </div>
+    
 </div>
     
 </section>
@@ -169,25 +169,56 @@
 <!----------------Footer--------------------->
  <footer></footer>
 
-  <script>
-    AOS.init();
-  </script>
-
-<script>
+ <script>
     document.addEventListener("DOMContentLoaded", function () {
         const navbarToggler = document.getElementById("navbar-toggler");
         const navbarNav = document.getElementById("navbarNav");
-    
+        const navLinks = document.querySelectorAll(".nav-link");
+
         navbarToggler.addEventListener("click", function () {
             if (navbarNav.classList.contains("show")) {
                 navbarNav.classList.remove("show");
+                navbarOverlay.classList.remove("show-overlay");
             } else {
                 navbarNav.classList.add("show");
+                navbarOverlay.classList.add("show-overlay");
             }
         });
+
+        navLinks.forEach(function (link) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+
+                const target = link.getAttribute("href").substring(1); // Obtiene el ID del destino
+                const targetElement = document.getElementById(target);
+
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop;
+                    const scrollDuration = 800; // Duración del desplazamiento en milisegundos
+
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: "smooth", // Activa el desplazamiento suave
+                        duration: scrollDuration
+                    });
+
+                    // Cierra el menú desplegable
+                    navbarNav.classList.remove("show");
+                    navbarOverlay.classList.remove("show-overlay");
+                }
+            });
+        });
     });
-    </script>
+</script>
 
+<script>
+    AOS.init();
+  </script>
 
+<div class="whatsapp-icon">
+    <a href="https://api.whatsapp.com/send?phone=543413234373" target="_blank">
+      <img src="img/whatsapp.png" alt="WhatsApp">
+    </a>
+  </div>
 </body>
 </html> 
