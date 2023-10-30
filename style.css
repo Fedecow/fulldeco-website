@@ -89,7 +89,7 @@ body{
     transition: transform 0.3s ease, font-size 0.3s ease;
     transform: scale(1);
     margin-left: 10px; /* Espacio adicional a la derecha del botón */
-    display: flex;
+    display: inline-block;
     
     
 }
@@ -131,7 +131,7 @@ body{
 /* Estilo para el contenido dentro del contenedor */
 .content {
     background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente para mejorar la legibilidad del texto */
-    width: 100%;
+    width: 600px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -178,6 +178,7 @@ img {
 
 /* Estilo para el párrafo */
 .content p {
+    color: #FFFFFF; /* Color del texto */
     font-size: 22px; /* Tamaño de fuente del párrafo */
     line-height: 1;
     margin-bottom: 5px;
@@ -366,6 +367,134 @@ color: #000000;}
 
 
 
+
+
+/* Agrega estos estilos al final de tu archivo CSS */
+#navbarOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none; /* Evita que se hagan clics en el fondo */
+    transition: opacity 0.3s;
+}
+
+
+
+#navbarNav.show {
+    width: 0; /* Ancho inicial cero para ocultarlo */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    width: 100%; /* Ancho del menú desplegable al 100% de la ventana del navegador */
+    transform: translateX(0); /* Lo desplaza desde la derecha */
+    overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
+}
+
+.navbar-brand, .navbar-toggler {
+    z-index: 10001; /* Asegura que el logo y el botón estén en la parte superior */
+}
+
+.navbar-toggler {
+    position: relative; /* Ajusta la posición del botón */
+}
+#navbarNav.show + #navbarOverlay.show-overlay {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+#navbarNav.show .navbar-nav .nav-link {
+    color: #ffffff; /* Cambia el color del texto a rojo cuando se despliega el menú */
+    font-size: 25px; /* Cambia el tamaño del texto a 20px cuando se despliega el menú */
+    font-family: 'Tu-Fuente-Preferida', sans-serif; /* Cambia la fuente del texto */
+    
+    
+}
+
+/************************************MAIN-CORTINAS-VERTICALES***********************************************/
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.thumbnail-images {
+    display: flex;
+    flex-direction: column; /* Organiza las miniaturas en una columna */
+    margin-right: 20px; /* Espacio entre las miniaturas y el contenido */
+}
+
+.thumbnail-images img {
+    width: 120px; /* Tamaño fijo para las miniaturas */
+    height: 120px; /* Ajusta la altura igual al ancho para mantener la relación de aspecto */
+    margin-bottom: 10px; /* Espacio entre las miniaturas */
+    cursor: pointer;
+}
+
+
+.card-details {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 20px;
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+
+}
+.contentCard {
+    flex: 1;
+    padding: 20px;
+    margin-left: 20px;
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+
+}
+
+.titulo1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.parrafo1 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.button1 {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+    cursor: pointer;
+    
+    
+}
+
 /* Media Query para tablet */
 @media (max-width: 1024px) {
     .product-gallery {
@@ -428,53 +557,35 @@ color: #000000;}
     }
 }
 
-/* Agrega estos estilos al final de tu archivo CSS */
-#navbarOverlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-    z-index: 9999;
-    opacity: 0;
-    pointer-events: none; /* Evita que se hagan clics en el fondo */
-    transition: opacity 0.3s;
+/* Estilo para la tarjeta en vista móvil */
+@media (max-width: 768px) {
+    .card-container {
+        min-height: auto; /* Quita la altura mínima en pantallas pequeñas */
+    }
+    .thumbnail-images img {
+        display: none;
+    }
+    .card-image img {
+        max-height: 300px; /* Establece una altura máxima para la imagen principal */
+    }
+    .content {
+        width: 100%; /* Ocupa el ancho completo de la tarjeta */
+    }
+    .titulo1 {
+        font-size: 20px; /* Ajusta el tamaño del título en dispositivos móviles */
+    }
+    .parrafo1 {
+        font-size: 14px; /* Ajusta el tamaño del párrafo en dispositivos móviles */
+        margin-top: 5px; /* Reduce el margen superior del párrafo */
+    }
+    .button1 {
+        font-size: 16px; /* Ajusta el tamaño del botón en dispositivos móviles */
+        margin-top: 15px; /* Aumenta el margen superior del botón */
+    }
 }
 
-
-
-#navbarNav.show {
-    width: 0; /* Ancho inicial cero para ocultarlo */
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 10000;
-    width: 100%; /* Ancho del menú desplegable al 100% de la ventana del navegador */
-    transform: translateX(0); /* Lo desplaza desde la derecha */
-    overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
+@media (max-width: 630px) {
+    .parrafo1{
+        display: none;
+    }
 }
-
-.navbar-brand, .navbar-toggler {
-    z-index: 10001; /* Asegura que el logo y el botón estén en la parte superior */
-}
-
-.navbar-toggler {
-    position: relative; /* Ajusta la posición del botón */
-}
-#navbarNav.show + #navbarOverlay.show-overlay {
-    display: block;
-    opacity: 1;
-    pointer-events: auto;
-}
-#navbarNav.show .navbar-nav .nav-link {
-    color: #ffffff; /* Cambia el color del texto a rojo cuando se despliega el menú */
-    font-size: 25px; /* Cambia el tamaño del texto a 20px cuando se despliega el menú */
-    font-family: 'Tu-Fuente-Preferida', sans-serif; /* Cambia la fuente del texto */
-    
-    
-}
-

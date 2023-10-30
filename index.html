@@ -84,7 +84,7 @@
 </div>
   <!----------------Main---------------->
   <main class="content-main">
-    <!----------------section 1-------------------->
+    <!----------------section 2-------------------->
     <section class="product-section" id="nosotros">
         <div class="product-text">
             <p class="styleP primerP" data-aos="fade-right" data-aos-delay="100" data-aos-duration="600">Encontrarás la mejor opción</p>
@@ -102,24 +102,26 @@
     
     
     
-<!----------------Sección 2---------------->
+<!----------------Sección 1---------------->
 
 <section class="product-gallery" id="products">
     <div class="product-card">
+        
         <div class="image-container">
-            <img src="img/bandas-verticales/bandasverticaes_outllet1.jpg" alt="bandas-verticales">
-            </div>
-            <div class="overlay">
+            <a href="cortinas-banda-vertical/cortinas-verticales.html"><img src="img/bandas-verticales/bandasverticaes_outllet1.jpg" alt="bandas-verticales">
+            </div></a>
+            
             <h3>Cortinas de Bandas Verticales</h3>
           <p>Ofrecen un control preciso de la privacidad y la luz en tu hogar. Mediante un giro de 90 grados de las láminas, puedes regular la cantidad de luz natural que ingresa a tus espacios, adaptándola a tus necesidades.</p>
  </div>
 </div>
 
     <div class="product-card">
+        
         <div class="image-container">
-            <img src="img/cortinas-cromaticas-aluminio/df8a440a542bde9a4ba24fdf480f567c.jpg" alt="cortinas-aluminio">
+         <a href="cortinas-cromaticas-aluminio/cortinas-cromaticas.html">  <img src="img/cortinas-cromaticas-aluminio/df8a440a542bde9a4ba24fdf480f567c.jpg" alt="cortinas-aluminio">
             
-        </div>
+        </div></a> 
         
             <h3>Cortinas Cromaticas de Aluminio</h3>
         <p>Estas cortinas son ideales para ambientes contemporáneos, ofrecen durabilidad y fácil mantenimiento. Además, están disponibles en una amplia gama de colores para adaptarse a tu estilo de decoración.</p>
@@ -175,58 +177,7 @@
 <!----------------Footer--------------------->
  <footer></footer>
 
- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const navbarToggler = document.getElementById("navbar-toggler");
-        const navbarNav = document.getElementById("navbarNav");
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        navbarToggler.addEventListener("click", function () {
-            if (navbarNav.classList.contains("show")) {
-                navbarNav.classList.remove("show");
-                navbarOverlay.classList.remove("show-overlay");
-            } else {
-                navbarNav.classList.add("show");
-                navbarOverlay.classList.add("show-overlay");
-            }
-        });
-
-        navLinks.forEach(function (link) {
-            link.addEventListener("click", function (e) {
-                e.preventDefault(); // Evita el comportamiento predeterminado del enlace
-
-                const target = link.getAttribute("href").substring(1); // Obtiene el ID del destino
-                const targetElement = document.getElementById(target);
-
-                if (targetElement) {
-                    const offsetTop = targetElement.offsetTop;
-                    const scrollDuration = 800; // Duración del desplazamiento en milisegundos
-
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: "smooth", // Activa el desplazamiento suave
-                        duration: scrollDuration
-                    });
-
-                    // Cierra el menú desplegable
-                    navbarNav.classList.remove("show");
-                    navbarOverlay.classList.remove("show-overlay");
-                }
-            });
-        });
-    });
-
-
-    $(document).ready(function() {
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.navbar').addClass('scrolled');
-    } else {
-      $('.navbar').removeClass('scrolled');
-    }
-  });
-});
-</script>
+ 
 
 <script>
     AOS.init();
