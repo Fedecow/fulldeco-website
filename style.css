@@ -1,10 +1,5 @@
 
-html, body {
-    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
-    
-   
-   
-}
+
 
 body{
     
@@ -156,7 +151,13 @@ body{
    
     
 }
+.content-height {
+    height: auto !important;
+    padding: 15px;
 
+   
+    
+}
 
 /* Estilo para las imágenes de fondo (se superpondrán en el carrusel) */
 .background-image {
@@ -445,7 +446,7 @@ color: #000000;}
 .thumbnail-images {
     display: flex;
     flex-direction: column; /* Organiza las miniaturas en una columna */
-    margin-right: 20px; /* Espacio entre las miniaturas y el contenido */
+    
 }
 
 .thumbnail-images img {
@@ -461,6 +462,8 @@ color: #000000;}
     align-items: center;
     margin-top: 20px;
     align-items: flex-start; /* Alinea los elementos en la parte superior */
+    margin: 25px;
+   
 
 }
 
@@ -511,6 +514,7 @@ color: #000000;}
 
 .card-imageProduct {
     margin-right: 20px;
+    margin-left: 10px;
 }
 
 .flecha-container {
@@ -530,9 +534,9 @@ color: #000000;}
    
   }
 
-  .flecha:hover {
-    text-decoration: none;
-    color: #606C43; /* Color blanco (puedes ajustar el color si es necesario) */
+  .flecha:hover {text-decoration: none;
+    color: #606C43;
+    /* Color blanco (puedes ajustar el color si es necesario) */
   }
   
   
@@ -617,23 +621,41 @@ color: #000000;}
 /* Estilo para la tarjeta en vista móvil */
 @media (max-width: 768px) {
     .card-container {
-        min-height: auto; /* Quita la altura mínima en pantallas pequeñas */
-        align-items: flex-start;
-        
-       
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column-reverse; /* Cambiar a una disposición de columna */
+      
     }
 
     .card-details {
-        margin-top: 35px;
+      margin-top: 20px;
+      display: flex; /* Agregar un espacio entre la imagen principal y las miniaturas */
+      flex-direction: column;
+      align-items: center;
     }
+
+    .thumbnail-images {
+      display: flex;
+      flex-direction: row; /* Colocar miniaturas en una fila */
+      justify-content: center; /* Centrar las miniaturas */
+      
+    }
+
     .thumbnail-images img {
-        display: none;
+        padding: 5px;
     }
     .card-image img {
         max-height: 300px; /* Establece una altura máxima para la imagen principal */
+        
     }
     .content {
         width: 100%; /* Ocupa el ancho completo de la tarjeta */
+        
+    }
+    .content-height {
+        margin-top: 10px;
+        
+        height: 10vh !important;
     }
     .titulo1 {
         font-size: 20px; /* Ajusta el tamaño del título en dispositivos móviles */
@@ -648,8 +670,16 @@ color: #000000;}
     }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 900px) {
     .parrafo1{
         display: none;
     }
+}
+
+@media screen and (orientation: landscape) {
+    .card-image {
+        display: flex;
+        flex-direction: row;
+    }
+    
 }
