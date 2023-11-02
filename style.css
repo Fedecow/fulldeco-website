@@ -1,11 +1,19 @@
 
+/* Para navegadores webkit */
 
-
+  
+  ::-webkit-scrollbar-thumb {
+    background: transparent; /* Color del fondo del "pulgarcito" de la barra de desplazamiento */
+  }
+  
+ 
 body{
     
     font-family:serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
     
 }
 
@@ -179,6 +187,16 @@ img {
     height: auto;
 }
 
+
+.mapa {
+    background-color: #606C43;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  
+   padding-bottom: 50px;
+   padding-top: 50px;
+}
 /* Estilo para el título H1 */
 .content h1 {
     color: #FFFFFF; /* Color del texto */
@@ -440,6 +458,7 @@ color: #000000;}
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
 }
 
 
@@ -539,8 +558,94 @@ color: #000000;}
     /* Color blanco (puedes ajustar el color si es necesario) */
   }
   
-  
+ 
+ /******testimonio de clientes******/
+.tituloParrafo {
+    margin-top: 15px;
+    
+}
+.tituloTestimonio {
+   margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 30px;
+    text-align: center;
 
+}
+
+.tituloParrafo p {
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 18px;
+    
+
+}
+
+ .carrusel {
+    overflow: hidden;
+    position: relative;
+}
+
+.contenedor {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 100px;
+    margin-top: 25px;
+}
+
+.imagen {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+    flex: 0 0 auto;
+    width: calc(100% / 5); /* Inicialmente muestra 5 imágenes por fila */
+    transition: transform 0.5s ease;
+}
+
+.imagen img {
+    width: 100%;
+    height: 200px; /* Ajusta esta altura según tus necesidades */
+    object-fit: cover; /* Esto recortará las imágenes si no tienen la misma relación de aspecto */
+}
+
+.buttonTest {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  cursor: pointer;
+  font-size: 24px; /* Ajusta el tamaño del icono según tus preferencias */
+  color: #000; /* Cambia el color del icono según tus preferencias */
+  padding: 0; /* Sin relleno */
+}
+
+.buttonTest:focus {
+    outline: none;
+}
+
+#anterior {
+    left: 0;
+}
+
+#siguiente {
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .imagen {
+        width: calc(100% / 2); /* Cuando la pantalla es más pequeña, muestra 2 imágenes por fila */
+    }
+}
+
+@media (max-width: 480px) {
+    .imagen {
+        width: 100%; /* En dispositivos móviles, muestra 1 imagen por fila */
+    }
+}
 /* Media Query para tablet */
 @media (max-width: 1024px) {
     .product-gallery {
@@ -676,10 +781,9 @@ color: #000000;}
     }
 }
 
-@media screen and (orientation: landscape) {
-    .card-image {
-        display: flex;
-        flex-direction: row;
+/* Media query para vista móvil (ancho máximo de 480px) */
+@media (max-width: 480px) {
+    .imagen {
+        width: 33.33%; /* Cambia el ancho de cada imagen en vista móvil */
     }
-    
 }

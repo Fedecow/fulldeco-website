@@ -74,4 +74,51 @@ function goBack() {
 
  
 
-  
+  document.addEventListener("DOMContentLoaded", function () {
+    // ... (otros códigos)
+
+    const carrusel = document.querySelector(".carrusel");
+    const imagenes = document.querySelector(".imagenes");
+    const anterior = document.querySelector("#anterior");
+    const siguiente = document.querySelector("#siguiente");
+    const imagenWidth = 20; // Ancho de cada imagen en porcentaje
+
+    let index = 0;
+    let limiteCarrusel = -200; // Valor predeterminado para el límite
+
+    // Detectar si la ventana está en vista móvil (ancho menor a X píxeles)
+    const mobileViewportWidth = 768; // Define el ancho de la vista móvil que prefieras
+
+    function ajustarLimiteCarrusel() {
+        if (window.innerWidth < mobileViewportWidth) {
+            limiteCarrusel = -300; // Cambiar a -300% en vista móvil
+        } else {
+            limiteCarrusel = -200; // Restaurar a -200% en otras vistas
+        }
+    }
+
+    ajustarLimiteCarrusel(); // Llamar la función al cargar la página
+
+    window.addEventListener("resize", ajustarLimiteCarrusel); // Actualizar en cambios de tamaño de ventana
+
+    siguiente.addEventListener("click", () => {
+        if (index > limiteCarrusel) {
+            index -= 100;
+            actualizarCarrusel();
+        }
+    });
+
+    anterior.addEventListener("click", () => {
+        if (index < 0) {
+            index += 100;
+            actualizarCarrusel();
+        }
+    });
+
+    function actualizarCarrusel() {
+        imagenes.style.transform = `translateX(${index}%)`;
+    }
+
+    actualizarCarrusel();
+});
+
