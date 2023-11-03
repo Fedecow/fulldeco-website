@@ -525,7 +525,7 @@ color: #000000;}
 
 .card-image img {
     max-width: 100%;
-    max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+    max-height: 100vh; /* Ajusta la altura máxima según tus necesidades */
     cursor: pointer;
     
     
@@ -825,3 +825,4 @@ color: #000000;}
 
 
 }
+
