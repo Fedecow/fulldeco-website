@@ -85,13 +85,14 @@ function goBack() {
 
     let index = 0;
     let limiteCarrusel = -200; // Valor predeterminado para el límite
+    let touchStartX = 0; // Posición inicial de deslizamiento táctil
 
     // Detectar si la ventana está en vista móvil (ancho menor a X píxeles)
     const mobileViewportWidth = 768; // Define el ancho de la vista móvil que prefieras
 
     function ajustarLimiteCarrusel() {
         if (window.innerWidth < mobileViewportWidth) {
-            limiteCarrusel = -700; // Cambiar a -300% en vista móvil
+            limiteCarrusel = -700; // Cambiar a -700% en vista móvil
         } else {
             limiteCarrusel = -200; // Restaurar a -200% en otras vistas
         }
@@ -115,10 +116,28 @@ function goBack() {
         }
     });
 
+    carrusel.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+
+    carrusel.addEventListener("touchmove", (e) => {
+        const touchEndX = e.touches[0].clientX;
+        const touchDiff = touchEndX - touchStartX;
+
+        if (touchDiff > 50 && index < 0) {
+            index += 100;
+            actualizarCarrusel();
+        } else if (touchDiff < -50 && index > limiteCarrusel) {
+            index -= 100;
+            actualizarCarrusel();
+        }
+
+        touchStartX = touchEndX;
+    });
+
     function actualizarCarrusel() {
         imagenes.style.transform = `translateX(${index}%)`;
     }
 
     actualizarCarrusel();
 });
-
