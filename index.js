@@ -91,7 +91,7 @@ function goBack() {
 
     function ajustarLimiteCarrusel() {
         if (window.innerWidth < mobileViewportWidth) {
-            limiteCarrusel = -300; // Cambiar a -300% en vista móvil
+            limiteCarrusel = -700; // Cambiar a -300% en vista móvil
         } else {
             limiteCarrusel = -200; // Restaurar a -200% en otras vistas
         }
