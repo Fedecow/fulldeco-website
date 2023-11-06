@@ -39,15 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-$(document).ready(function() {
-$(window).scroll(function() {
-if ($(this).scrollTop() > 100) {
-  $('.navbar').addClass('scrolled');
-} else {
-  $('.navbar').removeClass('scrolled');
-}
+$(window).on("scroll", { passive: true }, function() {
+    if ($(this).scrollTop() > 100) {
+        $('.navbar').addClass('scrolled');
+    } else {
+        $('.navbar').removeClass('scrolled');
+    }
 });
-});
+
 
 
 
@@ -118,7 +117,7 @@ function goBack() {
 
     carrusel.addEventListener("touchstart", (e) => {
         touchStartX = e.touches[0].clientX;
-    });
+    }, { passive: true });
 
     carrusel.addEventListener("touchmove", (e) => {
         const touchEndX = e.touches[0].clientX;
@@ -133,7 +132,7 @@ function goBack() {
         }
 
         touchStartX = touchEndX;
-    });
+    }, { passive: true });
 
     function actualizarCarrusel() {
         imagenes.style.transform = `translateX(${index}%)`;
