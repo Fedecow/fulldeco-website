@@ -161,8 +161,13 @@ body{
     
 }
 .content-height {
-    height: auto !important;
+    max-width: 50vw;
+    max-height: auto !important;
     padding: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    text-align: center;
+    margin: 15px;
 
    
     
@@ -460,6 +465,7 @@ color: #000000;}
     align-items: center;
     height: 100vh;
     
+    
 }
 
 
@@ -470,10 +476,11 @@ color: #000000;}
 }
 
 .thumbnail-images img {
-    width: 120px; /* Tamaño fijo para las miniaturas */
+    width: 30vw; /* Tamaño fijo para las miniaturas */
     height: 120px; /* Ajusta la altura igual al ancho para mantener la relación de aspecto */
     margin-bottom: 10px; /* Espacio entre las miniaturas */
     cursor: pointer;
+    ;
 }
 
 
@@ -483,6 +490,7 @@ color: #000000;}
     margin-top: 20px;
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     margin: 25px;
+    
    
 
 }
@@ -793,11 +801,7 @@ color: #000000;}
         width: 100%; /* Ocupa el ancho completo de la tarjeta */
         
     }
-    .content-height {
-        margin-top: 10px;
-        
-        height: 10vh !important;
-    }
+    
     .titulo1 {
         font-size: 20px; /* Ajusta el tamaño del título en dispositivos móviles */
     }
@@ -826,3 +830,29 @@ color: #000000;}
 
 }
 
+@media (orientation:landscape) {
+    .card-container {
+        height: 100%;
+
+        
+    }
+
+    .card-image img {
+        width: 100vw;
+    }
+
+    .card-details {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+       
+        
+    }
+    .thumbnail-images {
+        display: flex;
+        flex-direction: column;
+        width: 30vw; /* Tamaño fijo para las miniaturas */
+        height: 30vh; /* Ajusta la altura igual al ancho para mantener la relación de aspecto */
+        
+    }
+}
