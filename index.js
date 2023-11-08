@@ -140,3 +140,6 @@ function goBack() {
 
     actualizarCarrusel();
 });
+
+
+// prueba carrusel blackout

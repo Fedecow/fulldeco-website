@@ -25,10 +25,12 @@ body{
     background: transparent; /* Fondo completamente transparente */
     transition: background-color 0.3s;
     max-height: 90px;
-    position: absolute;
+    position: absolute;display: flex;
+    justify-content: flex-end;
     
     
 }
+
 .superpuesto {
     position: fixed;
     top: 0;
@@ -37,6 +39,7 @@ body{
     background: transparent; /* Estilo inicial sin fondo */
     z-index: 1000;
     opacity: 1;
+    height: 90px;
     transition: background 0.5s ease, opacity 0.5s ease; /* Ajusta la duración de la transición según tus necesidades */
   }
   .scrolled {
@@ -100,10 +103,16 @@ body{
     border: 2px solid #ffffff;
     transition: transform 0.3s ease, font-size 0.3s ease;
     transform: scale(1);
-    margin-left: 10px; /* Espacio adicional a la derecha del botón */
+    margin-right: 20px;
     display: inline-block;
+   
     
     
+}
+
+.bottomNav {
+    position: absolute;
+    right: 0;
 }
 
 .nav-link-bottom:hover{
@@ -119,7 +128,7 @@ body{
     margin-left: 0px;
     margin-right: 0px;
     position: relative;
-    
+    bottom: 15px;
     
 }
 
@@ -130,6 +139,10 @@ body{
 
 
 /* Estilo para el contenedor principal (hero) */
+.word-split {
+    height: 70px;
+    
+}
 .hero {
     background-image: url(img/hero-dos.webp);
     background-size: cover;
@@ -172,11 +185,12 @@ body{
     
     font-size: 22px;
    
-
-
-   
-    
 }
+
+.content-height a:hover {
+    text-decoration: none;
+}
+
 
 /* Estilo para las imágenes de fondo (se superpondrán en el carrusel) */
 .background-image {
@@ -217,7 +231,7 @@ img {
     font-size: 78px; /* Tamaño del texto */
     font-weight: 300; /* Peso de la fuente */
     line-height: 0.8;
-    letter-spacing: -10px; /* Ajusta el valor según tu preferencia */
+    letter-spacing: -8px; /* Ajusta el valor según tu preferencia */
 }
 
 /* Estilo para el párrafo */
@@ -279,8 +293,8 @@ img {
 }
 
 .content-main {
-    background:#ffffff;
-color: #000000;}
+    background:#000000;
+color: #ffffff;}
 
 
 .styleH2 {
@@ -521,12 +535,15 @@ color: #000000;}
 }
 
 .parrafo1 {
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    
 }
 
 .button1 {
-    background-color: #007BFF;
+    background-color: #ffffff;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -534,6 +551,7 @@ color: #000000;}
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 .card-image img {
@@ -592,6 +610,7 @@ color: #000000;}
     text-align: center;
     font-family: "Montserrat", Sans-serif;
     font-size: 18px;
+    color: #d1cfcf;
     
 
 }
@@ -623,7 +642,9 @@ color: #000000;}
     width: 100%;
     height: 200px; /* Ajusta esta altura según tus necesidades */
     object-fit: cover; /* Esto recortará las imágenes si no tienen la misma relación de aspecto */
+    cursor: pointer;
 }
+
 
 .buttonTest {
     position: absolute;
@@ -633,7 +654,7 @@ color: #000000;}
   border: none; /* Sin borde */
   cursor: pointer;
   font-size: 24px; /* Ajusta el tamaño del icono según tus preferencias */
-  color: #000; /* Cambia el color del icono según tus preferencias */
+  color: #ffffff; /* Cambia el color del icono según tus preferencias */
   padding: 0; /* Sin relleno */
 }
 
@@ -684,6 +705,12 @@ color: #000000;}
 
 
 
+/*prueba carrusel blackout*/
+
+
+
+
+
 @media (max-width: 768px) {
     .imagen {
         width: calc(100% / 2); /* Cuando la pantalla es más pequeña, muestra 2 imágenes por fila */
@@ -712,7 +739,7 @@ color: #000000;}
 /* Estilo para el título H1 en pantallas pequeñas (menos de 560px de ancho) */
 @media (max-width: 560px) {
     .content h1 {
-        font-size: 80px; /* Tamaño del texto en pantallas pequeñas */
+        font-size: 60px; /* Tamaño del texto en pantallas pequeñas */
     }
 }
 
@@ -749,14 +776,11 @@ color: #000000;}
       /* Restablece el estilo .scrolled a su estado inicial cuando la pantalla se achica a 1000px o menos */
       background: transparent;
     }
-    .navbar-brand-img {
-        padding-bottom: 15px;
-        position: relative;
-        top: -15px;
-    }
+   
     .navbar-dark .navbar-toggler {
         position: relative;
         top: -15px;
+        
     }
    
   }
@@ -813,6 +837,7 @@ color: #000000;}
     .parrafo1 {
         font-size: 14px; /* Ajusta el tamaño del párrafo en dispositivos móviles */
         margin-top: 5px; /* Reduce el margen superior del párrafo */
+        
     }
     .button1 {
         font-size: 16px; /* Ajusta el tamaño del botón en dispositivos móviles */
@@ -820,9 +845,17 @@ color: #000000;}
     }
 }
 
+@media (max-width:465px) {
+    
+
+    .word-split {
+        height: auto;
+    }
+}
 @media (max-width: 900px) {
     .parrafo1{
         display: none;
+        
     }
 }
 
@@ -860,4 +893,5 @@ color: #000000;}
         height: 30vh; /* Ajusta la altura igual al ancho para mantener la relación de aspecto */
         
     }
+    
 }
