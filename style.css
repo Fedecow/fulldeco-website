@@ -140,7 +140,7 @@ body{
 
 /* Estilo para el contenedor principal (hero) */
 .word-split {
-    height: 70px;
+    height: 80px;
     
 }
 .hero {
@@ -705,8 +705,82 @@ color: #ffffff;}
 
 
 
-/*prueba carrusel blackout*/
+/*prueba carrusel bandas verticales*/
 
+
+
+#carouselExampleFade {
+    height: 100%; /* Ajusta la altura del carrusel al 100% del contenedor */
+}
+
+.carousel-inner {
+    height: 100%; /* Ajusta la altura del carrusel al 100% del contenedor */
+}
+
+.carousel-item {
+    height: 100%; /* Ajusta la altura de los elementos del carrusel al 100% del contenedor */
+}
+
+.bd-placeholder-img {
+    object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+    width: 100%;
+    height: 400px;
+    display: inline;
+    align-items: center;
+}
+
+.tituloProductos {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    align-items: center;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #2b7d7d;
+    font-weight: bold;
+    margin-left: 40px;
+    
+}
+
+.parrafoProductos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: "Montserrat", Sans-serif;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 50px;
+    color: #818181;
+}
+.line-container {
+    width: 95%; /* Ajusta el ancho del contenedor de la línea según tus preferencias */
+    margin: 20px auto; /* Ajusta el espacio alrededor del contenedor y lo centra horizontalmente */
+}
+hr {
+    border: 1px solid #818181; /* Establece el color y grosor de la línea */
+    width: 100%; /* Ajusta el ancho de la línea al 100% del contenedor */
+}
+
+
+
+
+
+
+ @media (min-width: 720px) {
+    .bd-placeholder-img {
+        object-fit: contain; /* Ajusta la imagen para cubrir completamente el contenedor */
+        width: 100%;
+        height: 100vh;
+    }
+    .botonProducts {
+        background: rgba(0, 0, 0, 1);
+        border-radius: 50%;
+    }
+ }
 
 
 
@@ -739,7 +813,10 @@ color: #ffffff;}
 /* Estilo para el título H1 en pantallas pequeñas (menos de 560px de ancho) */
 @media (max-width: 560px) {
     .content h1 {
-        font-size: 60px; /* Tamaño del texto en pantallas pequeñas */
+        font-size: 50px; /* Tamaño del texto en pantallas pequeñas */
+    }
+    .navbar-brand-img {
+        max-width: 70px;
     }
 }
 
@@ -785,16 +862,7 @@ color: #ffffff;}
    
   }
 
-  @media (max-width: 1000px) {
-    .nav-link-bottom {
-        display: none; /* Oculta el botón en tamaños de pantalla menores o iguales a 1000px */
-    }
-    
-    .flecha {
-        position: relative;
-        top: -15px;
-    }
-}
+
 
 /* Estilo para la tarjeta en vista móvil */
 @media (max-width: 768px) {
@@ -845,13 +913,7 @@ color: #ffffff;}
     }
 }
 
-@media (max-width:465px) {
-    
 
-    .word-split {
-        height: auto;
-    }
-}
 @media (max-width: 900px) {
     .parrafo1{
         display: none;
@@ -894,4 +956,23 @@ color: #ffffff;}
         
     }
     
+}
+
+@media (max-height: 300px) {
+    .btn-accion {
+        display: none;
+    }
+}
+
+@media (max-width: 219px) {
+    .btn-accion{
+       display: none;
+    } 
+}
+    
+
+@media (max-width: 291px) and (max-height: 300px) {
+    .word-split {
+        height: 90px;
+    }
 }
