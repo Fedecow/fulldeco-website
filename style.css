@@ -116,10 +116,10 @@ body{
 }
 
 .nav-link-bottom:hover{
-    background-color: transparent;
+    
     color: white;
     transform: scale(1.1);
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
 }
 
@@ -142,6 +142,33 @@ body{
 .word-split {
     height: 80px;
     
+}
+.contenedorDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+}
+.nav-link-bottomP {
+    padding: 10px 20px;
+    background-color: #2b7d7d;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    transform: scale(1);
+    display: inline-block;
+}
+.nav-link-bottomP:hover {
+    
+    
+    transform: scale(1.1);
+    
+    text-decoration: none;
 }
 .hero {
     background-image: url(img/hero-dos.webp);
@@ -254,17 +281,17 @@ img {
     color: #ffffff; /* Color del texto del botón (azul oscuro) */
     text-decoration: none;
     border-radius: 50px; /* Hace que el botón sea ovalado */
-    font-size: 20px;
+    font-size: 18px;
     border: 2px solid #ffffff; /* Borde de 2px sólido en azul oscuro */
     transition: transform 0.3s ease, font-size 0.3s ease; /* Transición suave para transformación y tamaño de fuente */
     transform: scale(1); /* Tamaño inicial del botón (100%) */
 }
 /* Estilo para el botón al hacer hover */
 .btn-accion:hover {
-    background-color: transparent; /* Cambia el color de fondo al hacer hover a azul oscuro */
+    
     color: white; /* Cambia el color del texto a blanco */
     transform: scale(1.1); /* Aumenta el tamaño del botón al hacer hover al 110% del tamaño original */
-    font-size: 20px; /* Tamaño de fuente del botón al hacer hover (mismo tamaño inicial) */
+    font-size: 18px; /* Tamaño de fuente del botón al hacer hover (mismo tamaño inicial) */
     text-decoration: none;
 
 }
@@ -585,8 +612,9 @@ color: #ffffff;}
    
   }
 
-  .flecha:hover {text-decoration: none;
-    color: #606C43;
+  .flecha:hover {
+    text-decoration: none;
+    color: #000000;
     /* Color blanco (puedes ajustar el color si es necesario) */
   }
   
@@ -731,15 +759,14 @@ color: #ffffff;}
 
 .tituloProductos {
     display: flex;
-    justify-content: center;
+    text-align: center;
     margin: 15px;
-    align-items: center;
     font-size: 26px;
     text-transform: uppercase;
     font-family: 'Montserrat', Arial, sans-serif;
     color: #2b7d7d;
     font-weight: bold;
-    margin-left: 40px;
+   
     
 }
 
@@ -779,6 +806,13 @@ hr {
     .botonProducts {
         background: rgba(0, 0, 0, 1);
         border-radius: 50%;
+    }
+
+    .flecha {
+        color: #000000;
+    }
+    .flecha:hover {
+        color:#ffffff;
     }
  }
 
@@ -974,5 +1008,11 @@ hr {
 @media (max-width: 291px) and (max-height: 300px) {
     .word-split {
         height: 90px;
+    }
+}
+
+@media (max-width: 991px) {
+    .nav-link-bottom {
+        display: none;
     }
 }
