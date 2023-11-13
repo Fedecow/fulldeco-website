@@ -83,7 +83,7 @@ function goBack() {
     const imagenWidth = 20; // Ancho de cada imagen en porcentaje
 
     let index = 0;
-    let limiteCarrusel = -200; // Valor predeterminado para el límite
+    let limiteCarrusel = -300; // Valor predeterminado para el límite
     let touchStartX = 0; // Posición inicial de deslizamiento táctil
 
     // Detectar si la ventana está en vista móvil (ancho menor a X píxeles)
@@ -93,7 +93,7 @@ function goBack() {
         if (window.innerWidth < mobileViewportWidth) {
             limiteCarrusel = -700; // Cambiar a -700% en vista móvil
         } else {
-            limiteCarrusel = -200; // Restaurar a -200% en otras vistas
+            limiteCarrusel = -300; // Restaurar a -200% en otras vistas
         }
     }
 

@@ -664,8 +664,8 @@ color: #ffffff;}
     padding: 5px;
     text-align: center;
     flex: 0 0 auto;
-    width: calc(100% / 5); /* Inicialmente muestra 5 imágenes por fila */
-    transition: transform 0.5s ease;
+    width: calc(100% / 4); /* Inicialmente muestra 5 imágenes por fila */
+    overflow: hidden; /* Añade esta propiedad para evitar que las imágenes se desborden al agrandarse */
 }
 
 .imagen img {
@@ -673,13 +673,16 @@ color: #ffffff;}
     height: 200px; /* Ajusta esta altura según tus necesidades */
     object-fit: cover; /* Esto recortará las imágenes si no tienen la misma relación de aspecto */
     cursor: pointer;
+    transition: transform 1s ease; /* Transición en el estado normal y hover */
 }
 
-.imagen:hover {
+.imagen:hover img {
     transform: scale(1.2); /* Ajusta el valor según lo que desees para el agrandamiento */
-    
-    
-    
+}
+
+.imagen img:not(:hover) {
+    transform: scale(1); /* Volver al estado original cuando no está en hover */
+    transition: transform 1s ease; /* Hacer la transición de vuelta más lenta */
 }
 
 .buttonTest {
@@ -707,6 +710,7 @@ color: #ffffff;}
     right: 0;
     padding-right: 15px;
 }
+
 
 
 /*footer*/
