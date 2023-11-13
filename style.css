@@ -604,11 +604,13 @@ color: #ffffff;}
   
   .flecha {
     
-    font-size: 60px; /* Tamaño más grande */
+    font-size: 40px; /* Tamaño más grande */
     text-decoration: none;
     color: white; /* Color blanco */
     cursor: pointer;
-    padding: 10px; /* Espaciado interior para hacerla más grande */
+    padding: 20px; /* Espaciado interior para hacerla más grande */
+    
+
    
   }
 
@@ -673,6 +675,12 @@ color: #ffffff;}
     cursor: pointer;
 }
 
+.imagen:hover {
+    transform: scale(1.2); /* Ajusta el valor según lo que desees para el agrandamiento */
+    
+    
+    
+}
 
 .buttonTest {
     position: absolute;
@@ -799,6 +807,54 @@ hr {
 
 
 
+/*Politicas de Privacidad*/
+
+
+.contentCenter{
+    display: flex;
+    flex-direction: column;
+    margin: 70px;
+    padding: 60px;
+    left: 8.33333%;
+    text-align: start;
+    
+}
+
+.actualizacion {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.tituloPrincipalPolitica {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+
+.subTtitulo {
+font-size: 24px;
+font-weight: 500;
+text-decoration: underline;
+}
+.subTtituloDosPuntos {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.parrafosExpPolitica {
+font-size: 16px;
+color: #88898C;
+}
+
+
+.parrafoFin {
+    font-size: 16px;
+    color: #818181;
+    font-weight: 500;
+}
+
+/*Media query*/
 
 
  @media (min-width: 720px) {
