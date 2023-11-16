@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navbarToggler = document.getElementById("navbar-toggler");
     const navbarNav = document.getElementById("navbarNav");
+    const navbarOverlay = document.getElementById("navbarOverlay"); // Agrega esta línea
     const navLinks = document.querySelectorAll(".nav-link");
 
     navbarToggler.addEventListener("click", function () {
@@ -142,4 +143,7 @@ function goBack() {
 });
 
 
-// prueba carrusel blackout
+
+
+
+
